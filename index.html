@@ -1,56 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Glad2Glow | Beauty & Skincare</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glad2Glow</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#272124;background:#fff}a{text-decoration:none}
-nav{position:fixed;top:0;width:100%;z-index:5;background:#fffefeeF;border-bottom:1px solid #f0e2e7}.nav{max-width:1180px;margin:auto;height:72px;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:25px;font-weight:800;color:#b72c62}.logo span{color:#222}.links{display:flex;gap:24px;font-size:14px;font-weight:700}.links a:hover{color:#b72c62}
-.btn{display:inline-block;background:#c93670;color:white;padding:13px 21px;border-radius:30px;font-weight:700;font-size:14px}
-section{padding:95px 24px}.wrap{max-width:1180px;margin:auto}.hero{padding-top:145px;min-height:680px;background:linear-gradient(135deg,#fff,#fff1f6,#f8d9e6)}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.kicker{color:#c93670;font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(45px,6vw,76px);line-height:.98;letter-spacing:-3px;margin:18px 0 24px}.hero p{font-size:18px;line-height:1.7;color:#665c60;max-width:570px;margin-bottom:30px}
-.hero-img{height:430px;border-radius:34px;background:#f5d4e0;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 25px 60px #82284d29}.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
-.title{text-align:center;margin-bottom:45px}.title h2{font-size:38px;margin:0 0 12px}.title p{color:#756b70}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{padding:28px;border:1px solid #f0e2e7;border-radius:24px;box-shadow:0 10px 30px #2814190d}.card h3{margin:0 0 10px}.card p{color:#746b70;line-height:1.6}
-.gallery{background:#fff7fa}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.gallery-item{height:330px;border-radius:22px;background:#f6dce6;border:1px solid #efd2dd;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 10px 28px #2814190d}.gallery-item img{width:100%;height:100%;object-fit:cover;display:block}
-.location-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}.address{padding:34px;border-radius:26px;background:#fff3f7;border:1px solid #f0dce4}.address p{line-height:1.8;color:#665c60}.map{min-height:360px;border-radius:26px;overflow:hidden;background:#eee}.map iframe{width:100%;height:360px;border:0}
-footer{background:#211c1f;color:#eee;padding:45px 24px}.footer{max-width:1180px;margin:auto;display:flex;justify-content:space-between}.footer small{color:#aaa}
-@media(max-width:800px){.links{display:none}.hero-grid,.location-grid{grid-template-columns:1fr}.cards,.gallery-grid{grid-template-columns:1fr}.hero-img{height:330px}.footer{flex-direction:column;gap:15px}}
+:root{--pink:#d81b68;--pink2:#f8dce8;--text:#222;--muted:#6b6470;--card:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#fff}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid #f0dce5;display:flex;align-items:center;justify-content:space-between;padding:16px 5%;gap:20px}
+.logo{font-size:27px;font-weight:800;color:var(--pink)}nav .links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center}nav a{text-decoration:none;color:#4b185e;font-weight:600}nav .cta{background:var(--pink);color:#fff;padding:12px 20px;border-radius:24px}
+section{padding:72px 5%}.hero{min-height:420px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#fff,#fdebf3)}
+.hero h1{font-size:48px;margin:0 0 12px;color:#c81962}.hero p{font-size:19px;color:var(--muted);max-width:700px;margin:auto}
+.section-title{text-align:center;font-size:38px;margin:0 0 12px}.section-sub{text-align:center;color:var(--muted);margin:0 auto 38px;max-width:760px;line-height:1.6}
+.about-grid,.products,.location-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.card{background:var(--card);border:1px solid #f0d7e2;border-radius:24px;padding:28px;box-shadow:0 12px 35px rgba(100,30,70,.07)}.card h3{margin-top:0;color:#b8175a;font-size:22px}.card p{color:var(--muted);line-height:1.7}
+.products{grid-template-columns:repeat(3,1fr)}.product{padding:0;overflow:hidden}.product img{width:100%;height:220px;object-fit:cover;background:#fde3ed}.product-visual{height:220px;padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:linear-gradient(145deg,#fff,#fbd8e7);color:#a91554}.product-visual span{font-size:12px;font-weight:800;letter-spacing:1.5px;margin-bottom:14px}.product-visual strong{font-size:22px;line-height:1.25}.product:hover{transform:translateY(-3px);transition:.2s;box-shadow:0 16px 38px rgba(100,30,70,.11)}.product .pad{padding:20px}.product h3{font-size:18px;margin:0 0 8px;color:#9f164f}.product p{margin:0;color:var(--muted);line-height:1.5}
+.location{background:#fff7fa}.location-wrap{grid-template-columns:1.1fr .9fr;align-items:stretch}.building{width:100%;height:100%;min-height:330px;object-fit:cover;border-radius:22px;border:1px solid #efd5e0}.address{font-size:17px;line-height:1.7}.mapbtn,.sitebtn{display:inline-block;text-decoration:none;border-radius:25px;padding:13px 20px;font-weight:700;margin-top:10px}.mapbtn{background:var(--pink);color:#fff}.sitebtn{border:1px solid var(--pink);color:var(--pink);margin-left:8px}
+.note{margin-top:28px;padding:18px;border-radius:16px;background:#fff0f6;color:#6b4b5a;font-size:13px;line-height:1.6}
+footer{text-align:center;padding:28px 5%;background:#21151b;color:#fff}
+@media(max-width:800px){nav{flex-wrap:wrap}.links{width:100%;order:3}.hero h1{font-size:36px}.about-grid,.products,.location-wrap{grid-template-columns:1fr}section{padding:55px 5%}.product img{height:240px}}
 </style>
 </head>
 <body>
-<nav><div class="nav"><div class="logo">Glad<span>2</span>Glow</div><div class="links"><a href="#tentang">Tentang</a><a href="#produk">Produk</a><a href="#galeri">Galeri</a><a href="#lokasi">Lokasi</a></div><a class="btn" href="https://bisniskecantikan.cc" target="_blank" rel="noopener">Masuk Website</a></div></nav>
+<nav>
+  <div class="logo">Glad2Glow</div>
+  <div class="links">
+    <a href="#tentang">Tentang</a><a href="#produk">Produk</a><a href="#galeri">Galeri</a><a href="#lokasi">Lokasi</a>
+  </div>
+  <a class="cta" href="https://bisniskecantikan.cc" target="_blank" rel="noopener">Masuk Website</a>
+</nav>
 
-<section class="hero"><div class="wrap hero-grid"><div><div class="kicker">Beauty & Skincare</div><h1>Glow starts<br>with you.</h1><p>Website premium Glad2Glow dengan ruang untuk menampilkan informasi brand, produk, foto, alamat, dan titik Google Maps.</p><a class="btn" href="#produk">Jelajahi Produk</a> <a class="btn" style="margin-left:8px;background:#fff;color:#c93670;border:1px solid #e8b8ca" href="https://bisniskecantikan.cc" target="_blank" rel="noopener">Kunjungi Website</a></div><div class="hero-img"><img src="gedung-glad2glow.png" alt="Gedung Glad2Glow"></div></div></section>
+<section class="hero">
+  <div><h1>Glad2Glow</h1><p>Informasi brand, produk, galeri, dan lokasi dalam satu halaman yang rapi dan mudah diakses dari HP maupun komputer.</p></div>
+</section>
 
-<section id="tentang"><div class="wrap"><div class="title"><h2>Tentang Glad2Glow</h2><p>Perkenalkan brand kamu dengan tampilan bersih dan profesional.</p></div><div class="cards"><div class="card"><h3>Brand</h3><p>Tulis cerita dan informasi brand di sini.</p></div><div class="card"><h3>Produk</h3><p>Tampilkan koleksi dan informasi produk.</p></div><div class="card"><h3>Lokasi</h3><p>Pengunjung dapat melihat alamat dan titik lokasi.</p></div></div></div></section>
+<section id="tentang">
+  <h2 class="section-title">Tentang Glad2Glow</h2>
+  <p class="section-sub">Kenali informasi brand dan program yang ditampilkan pada website ini.</p>
+  <div class="about-grid">
+    <div class="card">
+      <h3>Brand</h3>
+      <p>Ini adalah produk kosmetik dan skincare. Program partisipasi anggota dapat memberikan bonus sesuai ketentuan program yang berlaku, dengan informasi bonus yang disebutkan mulai dari 20% hingga 50%.</p>
+    </div>
+    <div class="card">
+      <h3>Produk</h3>
+      <p>Temukan pilihan produk Glad2Glow untuk kebutuhan perawatan kulit dan kecantikan sehari-hari.</p>
+    </div>
+    <div class="card">
+      <h3>Lokasi</h3>
+      <p>Informasi alamat dan titik lokasi tersedia di bagian Lokasi agar pengunjung dapat melihatnya dengan mudah.</p>
+    </div>
+  </div>
+</section>
 
-<section id="produk"><div class="wrap"><div class="title"><h2>Produk Pilihan</h2><p>Area untuk foto dan deskripsi produk.</p></div><div class="cards"><div class="card"><h3>Produk 01</h3><p>Tambahkan foto dan deskripsi produk.</p></div><div class="card"><h3>Produk 02</h3><p>Tambahkan foto dan deskripsi produk.</p></div><div class="card"><h3>Produk 03</h3><p>Tambahkan foto dan deskripsi produk.</p></div></div></div></section>
+<section id="produk" style="background:#fff8fb">
+  <h2 class="section-title">Produk Glad2Glow</h2>
+  <p class="section-sub">Beberapa produk Glad2Glow yang tercantum pada katalog resmi brand.</p>
+  <div class="products">
+    <article class="card product">
+      <div class="product-visual"><span>SKINCARE</span><strong>3 in 1 Benefits<br>Serum-level Facial Wash</strong></div>
+      <div class="pad"><h3>3 in 1 Benefits Serum-level Facial Wash</h3><p>Facial wash dengan konsep serum-level untuk rutinitas pembersihan wajah.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>MOISTURIZER</span><strong>Pomegranate 5%<br>Niacinamide</strong></div>
+      <div class="pad"><h3>Pomegranate 5% Niacinamide Brightening Moisturizer</h3><p>Moisturizer harian untuk melengkapi rutinitas perawatan kulit.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>SERUM</span><strong>PDRN + Niacinamide<br>+ TXA</strong></div>
+      <div class="pad"><h3>PDRN 10% Niacinamide 3% TXA Brightening Serum</h3><p>Serum untuk perawatan kulit dengan fokus pada tampilan noda gelap.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>ACNE CARE</span><strong>Mugwort<br>Salicylic Acid</strong></div>
+      <div class="pad"><h3>Mugwort Salicylic Acid Acne Clay Stick</h3><p>Clay stick praktis untuk perawatan pori dan kulit berminyak.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>BRIGHTENING</span><strong>Yuja Symwhite 377<br>Dark Spot Serum</strong></div>
+      <div class="pad"><h3>Yuja Symwhite 377 Dark Spot Serum</h3><p>Serum ringan untuk melengkapi perawatan tampilan noda gelap.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>BARRIER CARE</span><strong>Blueberry Ceramide<br>Barrier Moisturizer</strong></div>
+      <div class="pad"><h3>Blueberry Ceramide Barrier Moisturizer</h3><p>Moisturizer dengan fokus pada kelembapan dan perawatan skin barrier.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>EXFOLIATOR</span><strong>AHA BHA PHA<br>Intensive Peeling</strong></div>
+      <div class="pad"><h3>AHA BHA PHA Intensive Peeling Solution</h3><p>Produk eksfoliasi untuk membantu membuat tekstur kulit terasa lebih halus.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>BODY CARE</span><strong>Niacinamide<br>Bright Body Serum</strong></div>
+      <div class="pad"><h3>Niacinamide Bright Body Serum</h3><p>Serum tubuh dengan tekstur ringan untuk perawatan kelembapan kulit.</p></div>
+    </article>
+    <article class="card product">
+      <div class="product-visual"><span>MAKEUP</span><strong>Perfect Cover<br>Cushion</strong></div>
+      <div class="pad"><h3>Perfect Cover Cushion</h3><p>Cushion untuk melengkapi tampilan makeup sehari-hari.</p></div>
+    </article>
+  </div>
+</section>
 
-<section id="galeri" class="gallery"><div class="wrap"><div class="title"><h2>Galeri</h2><p>Ganti kotak berikut dengan foto kamu.</p></div><div class="gallery-grid">
-<div class="gallery-item"><img src="akun-beranda.png" alt="Glad2Glow Beranda"></div>
-<div class="gallery-item"><img src="akun-saya.png" alt="Glad2Glow Akun Saya"></div>
-<div class="gallery-item"><img src="tier-rewards-100k.png" alt="Glad2Glow Tier Rewards"></div>
-<div class="gallery-item"><img src="tier-rewards-200k.png" alt="Glad2Glow Tier Rewards"></div>
-<div class="gallery-item"><img src="tier-rewards-300k.png" alt="Glad2Glow Tier Rewards"></div>
-<div class="gallery-item"><img src="tier-rewards-300k-2.png" alt="Glad2Glow Tier Rewards"></div>
-</div></div></section>
+<section id="galeri">
+  <h2 class="section-title">Galeri</h2>
+  <p class="section-sub">Beberapa materi visual yang tersedia di website.</p>
+  <div class="products">
+    <article class="card product"><img src="gedung-glad2glow.png" alt="Foto lokasi"><div class="pad"><h3>Lokasi</h3><p>Foto area lokasi yang ditampilkan pada halaman.</p></div></article>
+    <article class="card product"><img src="tier-rewards-100k.png" alt="Materi tier rewards"><div class="pad"><h3>Tier Rewards</h3><p>Materi visual program reward.</p></div></article>
+    <article class="card product"><img src="tier-rewards-200k.png" alt="Materi tier rewards"><div class="pad"><h3>Materi Reward</h3><p>Materi visual tambahan.</p></div></article>
+  </div>
+</section>
 
+<section id="lokasi" class="location">
+  <h2 class="section-title">Lokasi</h2>
+  <p class="section-sub">Alamat lokasi yang kamu berikan sebelumnya.</p>
+  <div class="location-wrap">
+    <img class="building" src="gedung-glad2glow.png" alt="Foto gedung/lokasi Glad2Glow">
+    <div class="card">
+      <h3>Alamat</h3>
+      <p class="address">Jl. Epicentrum Tengah No.3 1, RT.1/RW.5, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940, Indonesia</p>
+      <a class="mapbtn" href="https://www.google.com/maps/search/?api=1&query=Jl.%20Epicentrum%20Tengah%20No.3%201%2C%20RT.1%2FRW.5%2C%20Karet%20Kuningan%2C%20Kecamatan%20Setiabudi%2C%20Jakarta%20Selatan%2012940" target="_blank" rel="noopener">Buka Google Maps</a>
+      <a class="sitebtn" href="https://bisniskecantikan.cc" target="_blank" rel="noopener">Kunjungi Website</a>
+      <div class="note">Catatan: alamat dan informasi program di atas mengikuti data yang dimasukkan ke website. Pastikan informasi tersebut sesuai dengan kondisi sebenarnya sebelum dibagikan kepada client.</div>
+    </div>
+  </div>
+</section>
 
-<section id="informasi" style="background:#fff7fa"><div class="wrap">
-<div class="title"><h2>Informasi & Tampilan Aplikasi</h2><p>Dokumentasi visual yang kamu kirim ditampilkan dalam satu area website.</p></div>
-<div class="gallery-grid">
-<div class="gallery-item"><img src="akun-beranda.png" alt="Halaman Beranda"></div>
-<div class="gallery-item"><img src="akun-saya.png" alt="Halaman Akun Saya"></div>
-<div class="gallery-item"><img src="tier-rewards-100k.png" alt="Tier Rewards 100000"></div>
-<div class="gallery-item"><img src="tier-rewards-200k.png" alt="Tier Rewards 200000"></div>
-<div class="gallery-item"><img src="tier-rewards-300k.png" alt="Tier Rewards 300000"></div>
-<div class="gallery-item"><img src="tier-rewards-300k-2.png" alt="Tier Rewards"></div>
-</div></div></section>
-<section id="lokasi"><div class="wrap"><div class="title"><h2>Lokasi Kami</h2><p>Masukkan alamat dan titik Google Maps yang benar.</p></div><div class="location-grid"><div class="address"><h3>Glad2Glow</h3><p><b>Alamat:</b><br>Jl. Epicentrum Tengah No.3 1, RT.1/RW.5, Karet Kuningan, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12940, Indonesia</p><p><b>Jam Operasional:</b><br>09.00–18.00</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jl.%20Epicentrum%20Tengah%20No.3%201%2C%20RT.1/RW.5%2C%20Karet%20Kuningan%2C%20Kecamatan%20Setiabudi%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012940%2C%20Indonesia" target="_blank">Buka Google Maps</a></div><div class="map"><iframe src="https://www.google.com/maps?q=Jl.%20Epicentrum%20Tengah%20No.3%201%2C%20RT.1/RW.5%2C%20Karet%20Kuningan%2C%20Kecamatan%20Setiabudi%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012940%2C%20Indonesia&output=embed"></iframe></div></div></div></section>
-
-<footer><div class="footer"><div class="logo">Glad<span>2</span>Glow</div><small>© 2026 Glad2Glow</small></div></footer>
-</body></html>
+<footer>© Glad2Glow · Website informasi</footer>
+</body>
+</html>
