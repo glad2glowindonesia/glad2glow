@@ -18,57 +18,15 @@ section{padding:72px 5%}.hero{min-height:420px;display:flex;align-items:center;j
 .note{margin-top:28px;padding:18px;border-radius:16px;background:#fff0f6;color:#6b4b5a;font-size:13px;line-height:1.6}
 footer{text-align:center;padding:28px 5%;background:#21151b;color:#fff}
 @media(max-width:800px){nav{flex-wrap:wrap}.links{width:100%;order:3}.hero h1{font-size:36px}.about-grid,.products,.location-wrap{grid-template-columns:1fr}section{padding:55px 5%}.product img{height:240px}}
+#legalitasPopup{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(0,0,0,.72);backdrop-filter:blur(3px)}
+#legalitasPopup .legalitas-card{position:relative;width:min(92vw,720px);max-height:92vh;overflow:auto;border-radius:18px;background:#fff;box-shadow:0 18px 60px rgba(0,0,0,.35)}
+#legalitasPopup img{display:block;width:100%;height:auto}
+#legalitasPopup .legalitas-close{position:absolute;top:10px;right:10px;width:40px;height:40px;border:0;border-radius:50%;background:rgba(255,255,255,.95);color:#333;font-size:25px;line-height:40px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.2);z-index:2}
+.legalitas-actions{display:flex;justify-content:center;gap:10px;padding:15px;background:#fff}
+.legalitas-actions button{border:0;border-radius:25px;padding:12px 30px;font-size:16px;font-weight:700;cursor:pointer;background:#d81b68;color:#fff}
+@media(max-width:600px){#legalitasPopup{padding:10px}#legalitasPopup .legalitas-card{width:96vw;max-height:94vh}#legalitasPopup .legalitas-close{width:36px;height:36px;font-size:22px;line-height:36px}}
+body.legalitas-popup-open{overflow:hidden}
 </style>
-
-<style id="legalitas-popup-style">
-#legalitasPopup {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: rgba(0,0,0,.72);
-  backdrop-filter: blur(3px);
-}
-#legalitasPopup .legalitas-card {
-  position: relative;
-  width: min(92vw, 720px);
-  max-height: 92vh;
-  overflow: auto;
-  border-radius: 18px;
-  background: #fff;
-  box-shadow: 0 18px 60px rgba(0,0,0,.35);
-}
-#legalitasPopup img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-#legalitasPopup .legalitas-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255,255,255,.95);
-  color: #333;
-  font-size: 25px;
-  line-height: 40px;
-  cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0,0,0,.2);
-}
-@media (max-width: 600px) {
-  #legalitasPopup { padding: 10px; }
-  #legalitasPopup .legalitas-card { width: 96vw; max-height: 94vh; }
-  #legalitasPopup .legalitas-close { width: 36px; height: 36px; font-size: 22px; line-height: 36px; }
-}
-body.legalitas-popup-open { overflow: hidden; }
-</style>
-
 </head>
 <body>
 <nav>
@@ -87,18 +45,9 @@ body.legalitas-popup-open { overflow: hidden; }
   <h2 class="section-title">Tentang Glad2Glow</h2>
   <p class="section-sub">Kenali informasi brand dan program yang ditampilkan pada website ini.</p>
   <div class="about-grid">
-    <div class="card">
-      <h3>Brand</h3>
-      <p>Ini adalah produk kosmetik dan skincare. Program partisipasi anggota dapat memberikan bonus sesuai ketentuan program yang berlaku, dengan informasi bonus yang disebutkan mulai dari 20% hingga 50%.</p>
-    </div>
-    <div class="card">
-      <h3>Produk</h3>
-      <p>Temukan pilihan produk Glad2Glow untuk kebutuhan perawatan kulit dan kecantikan sehari-hari.</p>
-    </div>
-    <div class="card">
-      <h3>Lokasi</h3>
-      <p>Informasi alamat dan titik lokasi tersedia di bagian Lokasi agar pengunjung dapat melihatnya dengan mudah.</p>
-    </div>
+    <div class="card"><h3>Brand</h3><p>Ini adalah produk kosmetik dan skincare. Program partisipasi anggota dapat memberikan bonus sesuai ketentuan program yang berlaku, dengan informasi bonus yang disebutkan mulai dari 20% hingga 50%.</p></div>
+    <div class="card"><h3>Produk</h3><p>Temukan pilihan produk Glad2Glow untuk kebutuhan perawatan kulit dan kecantikan sehari-hari.</p></div>
+    <div class="card"><h3>Lokasi</h3><p>Informasi alamat dan titik lokasi tersedia di bagian Lokasi agar pengunjung dapat melihatnya dengan mudah.</p></div>
   </div>
 </section>
 
@@ -106,42 +55,15 @@ body.legalitas-popup-open { overflow: hidden; }
   <h2 class="section-title">Produk Glad2Glow</h2>
   <p class="section-sub">Beberapa produk Glad2Glow yang tercantum pada katalog resmi brand.</p>
   <div class="products">
-    <article class="card product">
-      <div class="product-visual"><span>SKINCARE</span><strong>3 in 1 Benefits<br>Serum-level Facial Wash</strong></div>
-      <div class="pad"><h3>3 in 1 Benefits Serum-level Facial Wash</h3><p>Facial wash dengan konsep serum-level untuk rutinitas pembersihan wajah.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>MOISTURIZER</span><strong>Pomegranate 5%<br>Niacinamide</strong></div>
-      <div class="pad"><h3>Pomegranate 5% Niacinamide Brightening Moisturizer</h3><p>Moisturizer harian untuk melengkapi rutinitas perawatan kulit.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>SERUM</span><strong>PDRN + Niacinamide<br>+ TXA</strong></div>
-      <div class="pad"><h3>PDRN 10% Niacinamide 3% TXA Brightening Serum</h3><p>Serum untuk perawatan kulit dengan fokus pada tampilan noda gelap.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>ACNE CARE</span><strong>Mugwort<br>Salicylic Acid</strong></div>
-      <div class="pad"><h3>Mugwort Salicylic Acid Acne Clay Stick</h3><p>Clay stick praktis untuk perawatan pori dan kulit berminyak.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>BRIGHTENING</span><strong>Yuja Symwhite 377<br>Dark Spot Serum</strong></div>
-      <div class="pad"><h3>Yuja Symwhite 377 Dark Spot Serum</h3><p>Serum ringan untuk melengkapi perawatan tampilan noda gelap.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>BARRIER CARE</span><strong>Blueberry Ceramide<br>Barrier Moisturizer</strong></div>
-      <div class="pad"><h3>Blueberry Ceramide Barrier Moisturizer</h3><p>Moisturizer dengan fokus pada kelembapan dan perawatan skin barrier.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>EXFOLIATOR</span><strong>AHA BHA PHA<br>Intensive Peeling</strong></div>
-      <div class="pad"><h3>AHA BHA PHA Intensive Peeling Solution</h3><p>Produk eksfoliasi untuk membantu membuat tekstur kulit terasa lebih halus.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>BODY CARE</span><strong>Niacinamide<br>Bright Body Serum</strong></div>
-      <div class="pad"><h3>Niacinamide Bright Body Serum</h3><p>Serum tubuh dengan tekstur ringan untuk perawatan kelembapan kulit.</p></div>
-    </article>
-    <article class="card product">
-      <div class="product-visual"><span>MAKEUP</span><strong>Perfect Cover<br>Cushion</strong></div>
-      <div class="pad"><h3>Perfect Cover Cushion</h3><p>Cushion untuk melengkapi tampilan makeup sehari-hari.</p></div>
-    </article>
+    <article class="card product"><div class="product-visual"><span>SKINCARE</span><strong>3 in 1 Benefits<br>Serum-level Facial Wash</strong></div><div class="pad"><h3>3 in 1 Benefits Serum-level Facial Wash</h3><p>Facial wash dengan konsep serum-level untuk rutinitas pembersihan wajah.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>MOISTURIZER</span><strong>Pomegranate 5%<br>Niacinamide</strong></div><div class="pad"><h3>Pomegranate 5% Niacinamide Brightening Moisturizer</h3><p>Moisturizer harian untuk melengkapi rutinitas perawatan kulit.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>SERUM</span><strong>PDRN + Niacinamide<br>+ TXA</strong></div><div class="pad"><h3>PDRN 10% Niacinamide 3% TXA Brightening Serum</h3><p>Serum untuk perawatan kulit dengan fokus pada tampilan noda gelap.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>ACNE CARE</span><strong>Mugwort<br>Salicylic Acid</strong></div><div class="pad"><h3>Mugwort Salicylic Acid Acne Clay Stick</h3><p>Clay stick praktis untuk perawatan pori dan kulit berminyak.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>BRIGHTENING</span><strong>Yuja Symwhite 377<br>Dark Spot Serum</strong></div><div class="pad"><h3>Yuja Symwhite 377 Dark Spot Serum</h3><p>Serum ringan untuk melengkapi perawatan tampilan noda gelap.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>BARRIER CARE</span><strong>Blueberry Ceramide<br>Barrier Moisturizer</strong></div><div class="pad"><h3>Blueberry Ceramide Barrier Moisturizer</h3><p>Moisturizer dengan fokus pada kelembapan dan perawatan skin barrier.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>EXFOLIATOR</span><strong>AHA BHA PHA<br>Intensive Peeling</strong></div><div class="pad"><h3>AHA BHA PHA Intensive Peeling Solution</h3><p>Produk eksfoliasi untuk membantu membuat tekstur kulit terasa lebih halus.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>BODY CARE</span><strong>Niacinamide<br>Bright Body Serum</strong></div><div class="pad"><h3>Niacinamide Bright Body Serum</h3><p>Serum tubuh dengan tekstur ringan untuk perawatan kelembapan kulit.</p></div></article>
+    <article class="card product"><div class="product-visual"><span>MAKEUP</span><strong>Perfect Cover<br>Cushion</strong></div><div class="pad"><h3>Perfect Cover Cushion</h3><p>Cushion untuk melengkapi tampilan makeup sehari-hari.</p></div></article>
   </div>
 </section>
 
@@ -171,52 +93,17 @@ body.legalitas-popup-open { overflow: hidden; }
 </section>
 
 <footer>© Glad2Glow · Website informasi</footer>
+
 <div id="legalitasPopup" role="dialog" aria-modal="true" aria-label="Dokumen Legalitas dan Sertifikasi">
   <div class="legalitas-card">
-
-    <button class="legalitas-close" type="button" onclick="closeLegalitasPopup()">×</button>
-
-    <img id="legalitasImage"
-         src="OJK.jpg"
-         alt="Dokumen OJK PT Suntone Wisdom Indonesia">
-
+    <button class="legalitas-close" type="button" aria-label="Tutup" onclick="closeLegalitasPopup()">×</button>
+    <img id="legalitasImage" src="./OJK.jpg" alt="Dokumen yang ditampilkan">
     <div class="legalitas-actions">
-      <button id="legalitasNext" type="button" onclick="nextLegalitas()">
-        Lanjut
-      </button>
-
-      <button id="legalitasFinish" type="button" onclick="closeLegalitasPopup()" style="display:none;">
-        Tutup
-      </button>
+      <button id="legalitasNext" type="button" onclick="nextLegalitas()">Lanjut</button>
+      <button id="legalitasFinish" type="button" onclick="closeLegalitasPopup()" style="display:none;">Tutup</button>
     </div>
-
   </div>
 </div>
-
-<style>
-.legalitas-actions {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px;
-  background: #fff;
-}
-
-.legalitas-actions button {
-  border: none;
-  border-radius: 25px;
-  padding: 12px 30px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  background: #d81b68;
-  color: white;
-}
-
-.legalitas-actions button:hover {
-  opacity: .9;
-}
-</style>
 
 <script>
 let legalitasStep = 1;
@@ -227,9 +114,8 @@ function nextLegalitas() {
   const finishButton = document.getElementById('legalitasFinish');
 
   if (legalitasStep === 1) {
-    image.src = 'HALAL%20G2G%20(1).jpg';
+    image.src = './HALAL%20G2G%20%281%29.jpg';
     image.alt = 'Sertifikat Halal PT Suntone Wisdom Indonesia';
-
     legalitasStep = 2;
     nextButton.style.display = 'none';
     finishButton.style.display = 'inline-block';
@@ -238,16 +124,11 @@ function nextLegalitas() {
 
 function closeLegalitasPopup() {
   const popup = document.getElementById('legalitasPopup');
-
-  if (popup) {
-    popup.style.display = 'none';
-  }
-
+  if (popup) popup.style.display = 'none';
   document.body.classList.remove('legalitas-popup-open');
 }
 
 document.body.classList.add('legalitas-popup-open');
 </script>
-
 </body>
 </html>
