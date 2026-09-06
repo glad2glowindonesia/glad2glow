@@ -19,6 +19,56 @@ section{padding:72px 5%}.hero{min-height:420px;display:flex;align-items:center;j
 footer{text-align:center;padding:28px 5%;background:#21151b;color:#fff}
 @media(max-width:800px){nav{flex-wrap:wrap}.links{width:100%;order:3}.hero h1{font-size:36px}.about-grid,.products,.location-wrap{grid-template-columns:1fr}section{padding:55px 5%}.product img{height:240px}}
 </style>
+
+<style id="legalitas-popup-style">
+#legalitasPopup {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0,0,0,.72);
+  backdrop-filter: blur(3px);
+}
+#legalitasPopup .legalitas-card {
+  position: relative;
+  width: min(92vw, 720px);
+  max-height: 92vh;
+  overflow: auto;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(0,0,0,.35);
+}
+#legalitasPopup img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+#legalitasPopup .legalitas-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  color: #333;
+  font-size: 25px;
+  line-height: 40px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0,0,0,.2);
+}
+@media (max-width: 600px) {
+  #legalitasPopup { padding: 10px; }
+  #legalitasPopup .legalitas-card { width: 96vw; max-height: 94vh; }
+  #legalitasPopup .legalitas-close { width: 36px; height: 36px; font-size: 22px; line-height: 36px; }
+}
+body.legalitas-popup-open { overflow: hidden; }
+</style>
+
 </head>
 <body>
 <nav>
@@ -121,5 +171,21 @@ footer{text-align:center;padding:28px 5%;background:#21151b;color:#fff}
 </section>
 
 <footer>© Glad2Glow · Website informasi</footer>
+
+<div id="legalitasPopup" role="dialog" aria-modal="true" aria-label="Informasi Legalitas dan Verifikasi">
+  <div class="legalitas-card">
+    <button class="legalitas-close" type="button" aria-label="Tutup" onclick="closeLegalitasPopup()">×</button>
+    <img src="legalitas-popup.png" alt="Informasi Legalitas dan Verifikasi PT Suntone Wisdom Indonesia">
+  </div>
+</div>
+<script>
+function closeLegalitasPopup() {
+  const popup = document.getElementById('legalitasPopup');
+  if (popup) popup.style.display = 'none';
+  document.body.classList.remove('legalitas-popup-open');
+}
+document.body.classList.add('legalitas-popup-open');
+</script>
+
 </body>
 </html>
