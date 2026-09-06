@@ -33,6 +33,19 @@ body.legalitas-popup-open{overflow:hidden}
 .bonus-main-card img{display:block;width:100%;height:auto;border-radius:18px}
 @media(max-width:800px){.bonus-section{padding:40px 4%}.bonus-main-card{padding:5px;border-radius:16px}.bonus-main-card img{border-radius:12px}}
 
+
+.catalog-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.catalog-card{background:#fff;border:1px solid #f0d7e2;border-radius:22px;padding:10px;box-shadow:0 12px 35px rgba(100,30,70,.08);overflow:hidden}
+.catalog-image{display:block;width:100%;padding:0;border:0;background:#f8dce8;border-radius:16px;cursor:pointer;overflow:hidden}
+.catalog-image img{display:block;width:100%;height:auto;max-height:620px;object-fit:contain;transition:transform .2s}
+.catalog-image:hover img{transform:scale(1.015)}
+.catalog-caption{display:flex;justify-content:space-between;align-items:center;padding:13px 10px 6px;color:#a91554}
+.catalog-caption span{font-size:13px;color:#7a6d76}
+#productLightbox{position:fixed;inset:0;z-index:100000;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82)}
+#productLightbox .product-lightbox-card{position:relative;max-width:96vw;max-height:94vh;background:#fff;border-radius:18px;padding:8px;box-shadow:0 20px 70px rgba(0,0,0,.5)}
+#productLightbox img{display:block;max-width:94vw;max-height:90vh;width:auto;height:auto;border-radius:12px}
+.product-lightbox-close{position:absolute;right:8px;top:8px;width:40px;height:40px;border:0;border-radius:50%;background:#fff;color:#333;font-size:25px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+@media(max-width:800px){.catalog-grid{grid-template-columns:1fr;gap:18px}.catalog-image img{max-height:none}}
 </style>
 </head>
 <body>
@@ -60,17 +73,39 @@ body.legalitas-popup-open{overflow:hidden}
 
 <section id="produk" style="background:#fff8fb">
   <h2 class="section-title">Produk Glad2Glow</h2>
-  <p class="section-sub">Beberapa produk Glad2Glow yang tercantum pada katalog resmi brand.</p>
-  <div class="products">
-    <article class="card product"><div class="product-visual"><span>SKINCARE</span><strong>3 in 1 Benefits<br>Serum-level Facial Wash</strong></div><div class="pad"><h3>3 in 1 Benefits Serum-level Facial Wash</h3><p>Facial wash dengan konsep serum-level untuk rutinitas pembersihan wajah.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>MOISTURIZER</span><strong>Pomegranate 5%<br>Niacinamide</strong></div><div class="pad"><h3>Pomegranate 5% Niacinamide Brightening Moisturizer</h3><p>Moisturizer harian untuk melengkapi rutinitas perawatan kulit.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>SERUM</span><strong>PDRN + Niacinamide<br>+ TXA</strong></div><div class="pad"><h3>PDRN 10% Niacinamide 3% TXA Brightening Serum</h3><p>Serum untuk perawatan kulit dengan fokus pada tampilan noda gelap.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>ACNE CARE</span><strong>Mugwort<br>Salicylic Acid</strong></div><div class="pad"><h3>Mugwort Salicylic Acid Acne Clay Stick</h3><p>Clay stick praktis untuk perawatan pori dan kulit berminyak.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>BRIGHTENING</span><strong>Yuja Symwhite 377<br>Dark Spot Serum</strong></div><div class="pad"><h3>Yuja Symwhite 377 Dark Spot Serum</h3><p>Serum ringan untuk melengkapi perawatan tampilan noda gelap.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>BARRIER CARE</span><strong>Blueberry Ceramide<br>Barrier Moisturizer</strong></div><div class="pad"><h3>Blueberry Ceramide Barrier Moisturizer</h3><p>Moisturizer dengan fokus pada kelembapan dan perawatan skin barrier.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>EXFOLIATOR</span><strong>AHA BHA PHA<br>Intensive Peeling</strong></div><div class="pad"><h3>AHA BHA PHA Intensive Peeling Solution</h3><p>Produk eksfoliasi untuk membantu membuat tekstur kulit terasa lebih halus.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>BODY CARE</span><strong>Niacinamide<br>Bright Body Serum</strong></div><div class="pad"><h3>Niacinamide Bright Body Serum</h3><p>Serum tubuh dengan tekstur ringan untuk perawatan kelembapan kulit.</p></div></article>
-    <article class="card product"><div class="product-visual"><span>MAKEUP</span><strong>Perfect Cover<br>Cushion</strong></div><div class="pad"><h3>Perfect Cover Cushion</h3><p>Cushion untuk melengkapi tampilan makeup sehari-hari.</p></div></article>
+  <p class="section-sub">Katalog produk Glad2Glow. Klik gambar untuk melihat tampilan lebih besar.</p>
+
+  <div class="catalog-grid">
+    <article class="catalog-card">
+      <button class="catalog-image" onclick="openProductImage('produk-1.png','Katalog Produk Glad2Glow 1')" aria-label="Lihat katalog produk 1">
+        <img src="produk-1.png" alt="Katalog Produk Glad2Glow 1">
+      </button>
+      <div class="catalog-caption"><strong>Katalog Produk</strong><span>Halaman 1</span></div>
+    </article>
+    <article class="catalog-card">
+      <button class="catalog-image" onclick="openProductImage('produk-2.png','Katalog Produk Glad2Glow 2')" aria-label="Lihat katalog produk 2">
+        <img src="produk-2.png" alt="Katalog Produk Glad2Glow 2">
+      </button>
+      <div class="catalog-caption"><strong>Katalog Produk</strong><span>Halaman 2</span></div>
+    </article>
+    <article class="catalog-card">
+      <button class="catalog-image" onclick="openProductImage('produk-3.png','Katalog Produk Glad2Glow 3')" aria-label="Lihat katalog produk 3">
+        <img src="produk-3.png" alt="Katalog Produk Glad2Glow 3">
+      </button>
+      <div class="catalog-caption"><strong>Katalog Produk</strong><span>Halaman 3</span></div>
+    </article>
+    <article class="catalog-card">
+      <button class="catalog-image" onclick="openProductImage('produk-4.png','Katalog Produk Glad2Glow 4')" aria-label="Lihat katalog produk 4">
+        <img src="produk-4.png" alt="Katalog Produk Glad2Glow 4">
+      </button>
+      <div class="catalog-caption"><strong>Katalog Produk</strong><span>Halaman 4</span></div>
+    </article>
+    <article class="catalog-card">
+      <button class="catalog-image" onclick="openProductImage('produk-5.png','Katalog Produk Glad2Glow 5')" aria-label="Lihat katalog produk 5">
+        <img src="produk-5.png" alt="Katalog Produk Glad2Glow 5">
+      </button>
+      <div class="catalog-caption"><strong>Katalog Produk</strong><span>Halaman 5</span></div>
+    </article>
   </div>
 </section>
 
@@ -101,6 +136,29 @@ body.legalitas-popup-open{overflow:hidden}
 
 <footer>© Glad2Glow · Website informasi</footer>
 
+<!-- Pembesar katalog produk -->
+<div id="productLightbox" role="dialog" aria-modal="true" aria-label="Gambar produk">
+  <div class="product-lightbox-card">
+    <button class="product-lightbox-close" type="button" onclick="closeProductImage()" aria-label="Tutup">×</button>
+    <img id="productLightboxImage" alt="">
+  </div>
+</div>
+
+<script>
+function openProductImage(src, alt) {
+  const box=document.getElementById('productLightbox');
+  const img=document.getElementById('productLightboxImage');
+  img.src=src; img.alt=alt||'Gambar produk';
+  box.style.display='flex';
+}
+function closeProductImage() {
+  const box=document.getElementById('productLightbox');
+  if(box) box.style.display='none';
+}
+document.getElementById('productLightbox')?.addEventListener('click', function(e){
+  if(e.target===this) closeProductImage();
+});
+</script>
 <!-- Popup menggunakan dua gambar yang kamu kirim, disimpan langsung di file ini. -->
 <div id="legalitasPopup" role="dialog" aria-modal="true" aria-label="Dokumen yang ditampilkan">
   <div class="legalitas-card">
