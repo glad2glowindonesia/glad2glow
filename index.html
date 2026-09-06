@@ -19,16 +19,6 @@ section{padding:72px 5%}.hero{min-height:420px;display:flex;align-items:center;j
 footer{text-align:center;padding:28px 5%;background:#21151b;color:#fff}
 @media(max-width:800px){nav{flex-wrap:wrap}.links{width:100%;order:3}.hero h1{font-size:36px}.about-grid,.products,.location-wrap{grid-template-columns:1fr}section{padding:55px 5%}.product img{height:240px}}
 
-
-.bonus-section{background:linear-gradient(135deg,#fff7fb,#fde7f1)}
-.bonus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.bonus-card{background:#fff;border:1px solid #f0d7e2;border-radius:24px;padding:28px;text-align:center;box-shadow:0 12px 35px rgba(100,30,70,.07)}
-.bonus-icon{font-size:38px;margin-bottom:12px}
-.bonus-card h3{margin:0 0 10px;color:#b8175a;font-size:21px}
-.bonus-card p{margin:0;color:var(--muted);line-height:1.6}
-.bonus-note{margin:28px auto 0;max-width:760px;text-align:center;color:#6b4b5a;font-size:13px;line-height:1.6}
-@media(max-width:800px){.bonus-grid{grid-template-columns:1fr}}
-
 #legalitasPopup{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:12px;background:rgba(0,0,0,.72);backdrop-filter:blur(4px)}
 .legalitas-card{position:relative;width:min(94vw,760px);max-height:94vh;overflow:auto;background:#fff;border-radius:18px;box-shadow:0 20px 70px rgba(0,0,0,.45)}
 #legalitasImage{display:block;width:100%;height:auto}
@@ -37,6 +27,12 @@ footer{text-align:center;padding:28px 5%;background:#21151b;color:#fff}
 .legalitas-actions button{border:0;border-radius:25px;padding:12px 34px;background:var(--pink);color:#fff;font-size:16px;font-weight:700;cursor:pointer}
 @media(max-width:600px){#legalitasPopup{padding:8px}.legalitas-card{width:97vw;max-height:95vh}.legalitas-close{width:36px;height:36px;font-size:22px}}
 body.legalitas-popup-open{overflow:hidden}
+
+.bonus-section{padding:58px 5%;background:linear-gradient(135deg,#fff7fb,#fde7f1)}
+.bonus-main-card{max-width:1200px;margin:24px auto 0;background:#fff;border:1px solid #f0d7e2;border-radius:24px;padding:10px;box-shadow:0 16px 45px rgba(100,30,70,.12);overflow:hidden}
+.bonus-main-card img{display:block;width:100%;height:auto;border-radius:18px}
+@media(max-width:800px){.bonus-section{padding:40px 4%}.bonus-main-card{padding:5px;border-radius:16px}.bonus-main-card img{border-radius:12px}}
+
 </style>
 </head>
 <body>
@@ -76,30 +72,6 @@ body.legalitas-popup-open{overflow:hidden}
     <article class="card product"><div class="product-visual"><span>BODY CARE</span><strong>Niacinamide<br>Bright Body Serum</strong></div><div class="pad"><h3>Niacinamide Bright Body Serum</h3><p>Serum tubuh dengan tekstur ringan untuk perawatan kelembapan kulit.</p></div></article>
     <article class="card product"><div class="product-visual"><span>MAKEUP</span><strong>Perfect Cover<br>Cushion</strong></div><div class="pad"><h3>Perfect Cover Cushion</h3><p>Cushion untuk melengkapi tampilan makeup sehari-hari.</p></div></article>
   </div>
-</section>
-
-
-<section id="bonus" class="bonus-section">
-  <h2 class="section-title">🎁 Bonus Member</h2>
-  <p class="section-sub">Informasi bonus dan reward yang tersedia sesuai ketentuan program yang berlaku.</p>
-  <div class="bonus-grid">
-    <div class="bonus-card">
-      <div class="bonus-icon">🎉</div>
-      <h3>Bonus Pendaftaran</h3>
-      <p>Bonus dapat diberikan kepada anggota yang memenuhi ketentuan pendaftaran program.</p>
-    </div>
-    <div class="bonus-card">
-      <div class="bonus-icon">⭐</div>
-      <h3>Bonus Aktivitas</h3>
-      <p>Reward dapat diperoleh berdasarkan aktivitas yang memenuhi persyaratan program.</p>
-    </div>
-    <div class="bonus-card">
-      <div class="bonus-icon">🏆</div>
-      <h3>Reward Program</h3>
-      <p>Berbagai reward dapat tersedia sesuai periode dan ketentuan program yang berlaku.</p>
-    </div>
-  </div>
-  <p class="bonus-note">Besaran, syarat, dan periode bonus mengikuti ketentuan program yang berlaku. Pastikan informasi bonus diperiksa sebelum digunakan dalam materi promosi.</p>
 </section>
 
 <section id="galeri">
