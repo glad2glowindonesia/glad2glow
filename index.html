@@ -171,19 +171,81 @@ body.legalitas-popup-open { overflow: hidden; }
 </section>
 
 <footer>© Glad2Glow · Website informasi</footer>
-
-<div id="legalitasPopup" role="dialog" aria-modal="true" aria-label="Informasi Legalitas dan Verifikasi">
+<div id="legalitasPopup" role="dialog" aria-modal="true" aria-label="Dokumen Legalitas dan Sertifikasi">
   <div class="legalitas-card">
-    <button class="legalitas-close" type="button" aria-label="Tutup" onclick="closeLegalitasPopup()">×</button>
-    <img src="legalitas-popup.png" alt="Informasi Legalitas dan Verifikasi PT Suntone Wisdom Indonesia">
+
+    <button class="legalitas-close" type="button" onclick="closeLegalitasPopup()">×</button>
+
+    <img id="legalitasImage"
+         src="OJK.jpg"
+         alt="Dokumen OJK PT Suntone Wisdom Indonesia">
+
+    <div class="legalitas-actions">
+      <button id="legalitasNext" type="button" onclick="nextLegalitas()">
+        Lanjut
+      </button>
+
+      <button id="legalitasFinish" type="button" onclick="closeLegalitasPopup()" style="display:none;">
+        Tutup
+      </button>
+    </div>
+
   </div>
 </div>
+
+<style>
+.legalitas-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: #fff;
+}
+
+.legalitas-actions button {
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #d81b68;
+  color: white;
+}
+
+.legalitas-actions button:hover {
+  opacity: .9;
+}
+</style>
+
 <script>
+let legalitasStep = 1;
+
+function nextLegalitas() {
+  const image = document.getElementById('legalitasImage');
+  const nextButton = document.getElementById('legalitasNext');
+  const finishButton = document.getElementById('legalitasFinish');
+
+  if (legalitasStep === 1) {
+    image.src = 'HALAL%20G2G%20(1).jpg';
+    image.alt = 'Sertifikat Halal PT Suntone Wisdom Indonesia';
+
+    legalitasStep = 2;
+    nextButton.style.display = 'none';
+    finishButton.style.display = 'inline-block';
+  }
+}
+
 function closeLegalitasPopup() {
   const popup = document.getElementById('legalitasPopup');
-  if (popup) popup.style.display = 'none';
+
+  if (popup) {
+    popup.style.display = 'none';
+  }
+
   document.body.classList.remove('legalitas-popup-open');
 }
+
 document.body.classList.add('legalitas-popup-open');
 </script>
 
