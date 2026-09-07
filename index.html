@@ -50,6 +50,14 @@ body.legalitas-popup-open{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.hero-image{animation:none}}
 @media(max-width:600px){.hero-image-section{padding:12px 12px 22px}.hero-image-button{border-radius:16px}.hero-hint{right:10px;bottom:10px;font-size:11px;padding:6px 9px}}
 
+
+.image-lightbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.86);align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.image-lightbox.show{display:flex}
+.image-lightbox img{max-width:94vw;max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 10px 50px rgba(0,0,0,.5);cursor:default}
+.lightbox-close{position:absolute;top:18px;right:22px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#222;font-size:32px;line-height:1;cursor:pointer;z-index:2}
+body.lightbox-open{overflow:hidden}
+.catalog-card,.bonus-card{cursor:zoom-in}
+
 </style>
 </head>
 <body>
@@ -85,12 +93,12 @@ body.legalitas-popup-open{overflow:hidden}
   <h2 class="section-title">Produk Glad2Glow</h2>
   <p class="section-sub">Katalog produk Glad2Glow. Klik gambar untuk melihat tampilan lebih besar.</p>
   <div class="catalog-grid">
-    <button class="catalog-card" type="button" onclick="openProductImage('produk-1.png')"><img src="produk-1.png" alt="Katalog Produk Glad2Glow 1" loading="lazy"></button>
-    <button class="catalog-card" type="button" onclick="openProductImage('produk-2.png')"><img src="produk-2.png" alt="Katalog Produk Glad2Glow 2" loading="lazy"></button>
-    <button class="catalog-card" type="button" onclick="openProductImage('produk-3.png')"><img src="produk-3.png" alt="Katalog Produk Glad2Glow 3" loading="lazy"></button>
-    <button class="catalog-card" type="button" onclick="openProductImage('produk-4.png')"><img src="produk-4.png" alt="Katalog Produk Glad2Glow 4" loading="lazy"></button>
-    <button class="catalog-card" type="button" onclick="openProductImage('produk-5.png')"><img src="produk-5.png" alt="Katalog Produk Glad2Glow 5" loading="lazy"></button>
-    <button class="catalog-card" type="button" onclick="openProductImage('produk-6.png')"><img src="produk-6.png" alt="Katalog Produk Glad2Glow 6" loading="lazy"></button>
+    <button class="catalog-card" type="button" data-lightbox="produk-1.png" aria-label="Perbesar produk 1"><img src="produk-1.png" alt="Katalog Produk Glad2Glow 1" loading="lazy"></button>
+    <button class="catalog-card" type="button" data-lightbox="produk-2.png" aria-label="Perbesar produk 2"><img src="produk-2.png" alt="Katalog Produk Glad2Glow 2" loading="lazy"></button>
+    <button class="catalog-card" type="button" data-lightbox="produk-3.png" aria-label="Perbesar produk 3"><img src="produk-3.png" alt="Katalog Produk Glad2Glow 3" loading="lazy"></button>
+    <button class="catalog-card" type="button" data-lightbox="produk-4.png" aria-label="Perbesar produk 4"><img src="produk-4.png" alt="Katalog Produk Glad2Glow 4" loading="lazy"></button>
+    <button class="catalog-card" type="button" data-lightbox="produk-5.png" aria-label="Perbesar produk 5"><img src="produk-5.png" alt="Katalog Produk Glad2Glow 5" loading="lazy"></button>
+    <button class="catalog-card" type="button" data-lightbox="produk-6.png" aria-label="Perbesar produk 6"><img src="produk-6.png" alt="Katalog Produk Glad2Glow 6" loading="lazy"></button>
   </div>
 </section>
 
@@ -98,14 +106,14 @@ body.legalitas-popup-open{overflow:hidden}
   <h2 class="section-title">Bonus Glad2Glow</h2>
   <p class="section-sub">Kumpulan materi bonus dan reward. Klik gambar untuk melihat lebih besar.</p>
   <div class="bonus-grid">
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-10k.png')"><img src="bonus-10k.png" alt="Bonus 10K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-50k.png')"><img src="bonus-50k.png" alt="Bonus 50K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-75k.png')"><img src="bonus-75k.png" alt="Bonus 75K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-100k.png')"><img src="bonus-100k.png" alt="Bonus 100K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-200k.png')"><img src="bonus-200k.png" alt="Bonus 200K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-300k.png')"><img src="bonus-300k.png" alt="Bonus 300K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-350k.png')"><img src="bonus-350k.png" alt="Bonus 350K"></button>
-    <button class="bonus-card" type="button" onclick="openProductImage('bonus-cashback.png')"><img src="bonus-cashback.png" alt="Cashback dan Voucher"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-10k.png" aria-label="Perbesar bonus"><img src="bonus-10k.png" alt="Bonus 10K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-50k.png" aria-label="Perbesar bonus"><img src="bonus-50k.png" alt="Bonus 50K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-75k.png" aria-label="Perbesar bonus"><img src="bonus-75k.png" alt="Bonus 75K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-100k.png" aria-label="Perbesar bonus"><img src="bonus-100k.png" alt="Bonus 100K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-200k.png" aria-label="Perbesar bonus"><img src="bonus-200k.png" alt="Bonus 200K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-300k.png" aria-label="Perbesar bonus"><img src="bonus-300k.png" alt="Bonus 300K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-350k.png" aria-label="Perbesar bonus"><img src="bonus-350k.png" alt="Bonus 350K"></button>
+    <button class="bonus-card" type="button" data-lightbox="bonus-cashback.png" aria-label="Perbesar bonus"><img src="bonus-cashback.png" alt="Cashback dan Voucher"></button>
   </div>
 </section>
 
@@ -162,5 +170,42 @@ function closeLegalitasPopup(){
 
 document.body.classList.add('legalitas-popup-open');
 </script>
+
+<div id="imageLightbox" class="image-lightbox" aria-hidden="true">
+  <button id="lightboxClose" class="lightbox-close" type="button" aria-label="Tutup">×</button>
+  <img id="lightboxImage" src="" alt="Tampilan gambar diperbesar">
+</div>
+<script>
+(function(){
+  function initLightbox(){
+    const box=document.getElementById('imageLightbox');
+    const img=document.getElementById('lightboxImage');
+    const close=document.getElementById('lightboxClose');
+    if(!box||!img||!close||box.dataset.ready==='1') return;
+    box.dataset.ready='1';
+    function open(src){
+      img.src=src;
+      box.classList.add('show');
+      box.setAttribute('aria-hidden','false');
+      document.body.classList.add('lightbox-open');
+    }
+    function hide(){
+      box.classList.remove('show');
+      box.setAttribute('aria-hidden','true');
+      document.body.classList.remove('lightbox-open');
+      setTimeout(function(){ if(!box.classList.contains('show')) img.src=''; },180);
+    }
+    document.querySelectorAll('[data-lightbox]').forEach(function(btn){
+      btn.addEventListener('click',function(){ open(this.getAttribute('data-lightbox')); });
+    });
+    close.addEventListener('click',hide);
+    box.addEventListener('click',function(e){ if(e.target===box) hide(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') hide(); });
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initLightbox);
+  else initLightbox();
+})();
+</script>
+
 </body>
 </html>
