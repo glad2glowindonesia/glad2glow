@@ -40,6 +40,16 @@ body.legalitas-popup-open{overflow:hidden}
 .catalog-card img,.bonus-card img{display:block;width:100%;height:auto}
 @media(max-width:650px){.catalog-grid,.bonus-grid{grid-template-columns:1fr}}
 
+
+.hero-image-section{padding:20px 24px 30px;background:#fff8fb}
+.hero-image-button{position:relative;display:block;width:min(1200px,100%);margin:0 auto;padding:0;border:1px solid #f1b8d0;border-radius:22px;overflow:hidden;background:#fff;cursor:pointer}
+.hero-image{display:block;width:100%;height:auto;animation:heroFloat 7s ease-in-out infinite;transform-origin:center}
+.hero-hint{position:absolute;right:18px;bottom:16px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.9);color:#c2185b;font-size:13px;font-weight:700;opacity:.92}
+.hero-image-button:hover .hero-image{animation-duration:4.5s}
+@keyframes heroFloat{0%,100%{transform:scale(1)}50%{transform:scale(1.025)}}
+@media (prefers-reduced-motion:reduce){.hero-image{animation:none}}
+@media(max-width:600px){.hero-image-section{padding:12px 12px 22px}.hero-image-button{border-radius:16px}.hero-hint{right:10px;bottom:10px;font-size:11px;padding:6px 9px}}
+
 </style>
 </head>
 <body>
@@ -51,9 +61,14 @@ body.legalitas-popup-open{overflow:hidden}
   <a class="cta" href="https://bisniskecantikan.cc" target="_blank" rel="noopener">Masuk Website</a>
 </nav>
 
-<section class="hero">
-  <div><h1>Glad2Glow</h1><p>Informasi brand, produk, galeri, dan lokasi dalam satu halaman yang rapi dan mudah diakses dari HP maupun komputer.</p></div>
+
+<section id="beranda" class="hero-image-section">
+  <button class="hero-image-button" type="button" onclick="openProductImage('hero-glad2glow.png')" aria-label="Perbesar banner utama Glad2Glow">
+    <img src="hero-glad2glow.png" alt="Banner utama Glad2Glow 3S Instant Appears Healthy Plump Lips" class="hero-image">
+    <span class="hero-hint">Klik untuk memperbesar</span>
+  </button>
 </section>
+
 
 <section id="tentang">
   <h2 class="section-title">Tentang Glad2Glow</h2>
@@ -147,42 +162,5 @@ function closeLegalitasPopup(){
 
 document.body.classList.add('legalitas-popup-open');
 </script>
-
-<div id="imageModal" class="image-modal" aria-hidden="true" onclick="closeProductImage(event)">
-  <button class="image-modal-close" type="button" onclick="closeProductImage(event)" aria-label="Tutup">×</button>
-  <img id="imageModalContent" src="" alt="Tampilan gambar besar" onclick="event.stopPropagation()">
-</div>
-<style>
-.image-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.82);align-items:center;justify-content:center;padding:28px;box-sizing:border-box}
-.image-modal.show{display:flex}
-.image-modal img{max-width:94vw;max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
-.image-modal-close{position:absolute;right:24px;top:18px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#222;font-size:32px;line-height:1;cursor:pointer;z-index:2}
-.catalog-card,.bonus-card{cursor:pointer}
-</style>
-<script>
-function openProductImage(src){
-  var modal=document.getElementById('imageModal');
-  var img=document.getElementById('imageModalContent');
-  if(!modal||!img)return;
-  img.src=src;
-  modal.classList.add('show');
-  modal.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-}
-function closeProductImage(e){
-  if(e) e.stopPropagation();
-  var modal=document.getElementById('imageModal');
-  var img=document.getElementById('imageModalContent');
-  if(!modal)return;
-  modal.classList.remove('show');
-  modal.setAttribute('aria-hidden','true');
-  if(img) img.src='';
-  document.body.style.overflow='';
-}
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape') closeProductImage();
-});
-</script>
-
 </body>
 </html>
