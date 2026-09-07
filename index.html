@@ -147,5 +147,42 @@ function closeLegalitasPopup(){
 
 document.body.classList.add('legalitas-popup-open');
 </script>
+
+<div id="imageModal" class="image-modal" aria-hidden="true" onclick="closeProductImage(event)">
+  <button class="image-modal-close" type="button" onclick="closeProductImage(event)" aria-label="Tutup">×</button>
+  <img id="imageModalContent" src="" alt="Tampilan gambar besar" onclick="event.stopPropagation()">
+</div>
+<style>
+.image-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.82);align-items:center;justify-content:center;padding:28px;box-sizing:border-box}
+.image-modal.show{display:flex}
+.image-modal img{max-width:94vw;max-height:92vh;width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45)}
+.image-modal-close{position:absolute;right:24px;top:18px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#222;font-size:32px;line-height:1;cursor:pointer;z-index:2}
+.catalog-card,.bonus-card{cursor:pointer}
+</style>
+<script>
+function openProductImage(src){
+  var modal=document.getElementById('imageModal');
+  var img=document.getElementById('imageModalContent');
+  if(!modal||!img)return;
+  img.src=src;
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+}
+function closeProductImage(e){
+  if(e) e.stopPropagation();
+  var modal=document.getElementById('imageModal');
+  var img=document.getElementById('imageModalContent');
+  if(!modal)return;
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden','true');
+  if(img) img.src='';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closeProductImage();
+});
+</script>
+
 </body>
 </html>
